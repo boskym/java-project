@@ -10,7 +10,7 @@ node('linux') {
 		sh 'ant -f build.xml -v'  
 	}   
 	stage('Deploy') {    
-		sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle-*.jar s3://jenkins-stack-s3bucket-1obukwy60lew6/'
+		sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle-*.jar s3://jenkins-stack-s3bucket-c6h7eunr6qyh/'
 	}
 	stage('Report') {    
 		sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins-stack'
